@@ -1,20 +1,24 @@
+body {
+    background-image: url(../images/wallpaper.jpg);
+}
+
 .title {
     font-family: 'Anton', sans-serif;
     font-size: 80px;
 }
 /**font-family: 'Catamaran', sans-serif;**/
 .saitamaImg {
-    width: 200px;
+    width: 185px;
 }
 
 .genosImg {
-    width: 200px;
+    width: 185px;
 }
 
 .borosImg {
-    width: 200px;
+    width: 185px;
 }
 
 .crabImg {
-    width: 200px;
+    width: 185px;
 }
