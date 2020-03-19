@@ -6,7 +6,7 @@ body {
     font-family: 'Anton', sans-serif;
     font-size: 80px;
 }
-/**font-family: 'Catamaran', sans-serif;**/
+
 .saitamaImg {
     width: 185px;
 }
@@ -21,4 +21,10 @@ body {
 
 .crabImg {
     width: 185px;
+}
+
+.myText {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }

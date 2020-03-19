@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/stylesheet" href="assets/css/style.css">
 
   <title>RPG Game</title>
 </head>
@@ -25,33 +25,57 @@
             <div class="col-md-3">
                 <div class="container p-0 bg-danger pt-4">
                     <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/>
-                    <p class="lead text-center">Saitama</p>
-                    <p class="lead text-center">Health: </p>
+                    <p class="text-center myText">Saitama</p>
+                    <p class="text-center myText">Health: </p>
                 </div>
             </div>    
             <div class="col-md-3">    
                 <div class="container p-0 bg-danger pt-4">
                     <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/>
-                    <p class="lead text-center">Genos</p>
-                    <p class="lead text-center">Health: </p>
+                    <p class="text-center myText">Genos</p>
+                    <p class="text-center myText">Health: </p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="container p-0 bg-danger pt-4">
                     <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/>
-                    <p class="lead text-center">Boros</p>
-                    <p class="lead text-center">Health: </p>
+                    <p class="text-center myText">Boros</p>
+                    <p class="text-center myText">Health: </p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="container p-0 bg-danger pt-4">
                     <img src="assets/images/crab.jpg" alt="crablante" class="mx-auto d-block crabImg"/>
-                    <p class="lead text-center">Crablante</p>
-                    <p class="lead text-center">Health: </p>
+                    <p class="text-center myText">Crablante</p>
+                    <p class="text-center myText">Health: </p>
                 </div>
             </div>
         </div>
+    <div class="container-fluid">    
+        <div class="row">
+            <div class="col-md-12 pb-2 pt-4">
+                <p class="text-center myText">Your Character</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 pb-2">
+                <p class="text-center myText">Enemies Available To Attack</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 pb-2">
+                <p class="text-center myText">Fight Section</p>
+                <button type="button" class="btn btn-dark mx-auto d-block mb-2 mt-3 text-warning btn-outline-danger">Attack</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 pb-2">
+                <p class="text-center myText">Defender</p>
+            </div>
+        </div>
+    </div>    
     </div>
   </div>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
