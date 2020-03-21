@@ -84,6 +84,24 @@ $("#genosClick").click(function() {
 
 $("#borosClick").click(function() {
 
+  opponentOne = $('<div class="container p-0 bg-secondary pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
+  opponentTwo = $('<div class="container p-0 bg-secondary pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
+  hero = $('<div class="container p-0 bg-secondary pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
+  opponentThree = $('<div class="container p-0 bg-secondary pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+
+  $("#saitamaClick").remove().addClass("saitama");
+  $("#genosClick").remove().addClass("genos");
+  $("#borosClick").remove().addClass("boros");
+  $("#crablanteClick").remove().addClass("crablante");
+
+  $("#enemy1").append(opponentOne);
+    opponentOne.attr('id', 'saitamaClick');
+  $("#enemy2").append(opponentTwo);
+    opponentTwo.attr('id', 'genosClick');
+  $("#myHero").append(hero);
+    hero.attr('id', 'borosClick');
+  $("#enemy3").append(opponentThree);
+    opponentThree.attr('id', 'crablanteClick');
 });
 
 $("#crablanteClick").click(function() {
