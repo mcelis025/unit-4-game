@@ -6,14 +6,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <title>RPG Game</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="jumbotron jumbotron-fluid bg-transparent">
+    <div class="jumbotron jumbotron-fluid bg-transparent pb-0 pt-5">
       <div class="container">
         <h1 class="text-center title"><span class="text-danger">One Punch Man</span> RPG</h1>
       </div>
@@ -21,31 +20,31 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
-          <div class="container p-0 bg-secondary pt-4" id="saitamaClick">
+          <div class="container p-0 bg-dark pt-4" id="saitamaClick">
             <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/>
-            <p class="text-center myText">Saitama</p>
-            <p class="text-center myText">Health: </p>
+            <p class="text-center textChar">Saitama</p>
+            <p class="text-center textChar">Health: </p>
           </div>
         </div>    
         <div class="col-md-3">    
-          <div class="container p-0 bg-secondary pt-4" id="genosClick">
+          <div class="container p-0 bg-dark pt-4" id="genosClick">
             <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/>
-            <p class="text-center myText">Genos</p>
-            <p class="text-center myText">Health: </p>
+            <p class="text-center textChar">Genos</p>
+            <p class="text-center textChar">Health: </p>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="container p-0 bg-secondary pt-4" id="borosClick">
+          <div class="container p-0 bg-dark pt-4" id="borosClick">
             <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/>
-            <p class="text-center myText">Boros</p>
-            <p class="text-center myText">Health: </p>
+            <p class="text-center textChar">Boros</p>
+            <p class="text-center textChar">Health: </p>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="container p-0 bg-secondary pt-4" id="crablanteClick">
+          <div class="container p-0 bg-dark pt-4" id="crablanteClick">
             <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/>
-            <p class="text-center myText">Crablante</p>
-            <p class="text-center myText">Health: </p>
+            <p class="text-center textChar">Crablante</p>
+            <p class="text-center textChar">Health: </p>
           </div>
         </div>
       </div>
@@ -53,19 +52,19 @@
         <div class="row">
           <div class="col-md-12 pb-2 pt-4">
             <p class="text-center myText">Your Character</p>
-              <div class="row">
-                <div class="col-md-3 d-block mx-auto bg-warning" id="myHero"></div>
-              </div>
+            <div class="row">
+              <div class="col-md-3 d-block mx-auto bg-warning textChar" id="myHero"></div>
+          </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 pb-2">
             <p class="text-center myText">Enemies Available To Attack</p>
-              <div class="row">
-                <div class="col-md-3 d-block mx-auto bg-danger" id="enemy1"></div>
-                <div class="col-md-3 d-block mx-auto bg-danger" id="enemy2"></div>
-                <div class="col-md-3 d-block mx-auto bg-danger" id="enemy3"></div>
-              </div>
+            <div class="row">
+              <div class="col-md-3 d-block mx-auto bg-danger textChar" id="enemy1"></div>
+              <div class="col-md-3 d-block mx-auto bg-danger textChar" id="enemy2"></div>
+              <div class="col-md-3 d-block mx-auto bg-danger textChar" id="enemy3"></div>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -77,6 +76,9 @@
         <div class="row">
           <div class="col-md-12 pb-2">
             <p class="text-center myText">Defender</p>
+            <div class="row">
+                <div class="col-md-3 d-block mx-auto bg-danger textChar" id="defender"></div>
+              </div>
           </div>
         </div>
       </div>    

@@ -1,4 +1,9 @@
 //Variables
+var saitamaSelect = $('<div class="container p-0 bg-dark pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
+var genosSelect = $('<div class="container p-0 bg-dark pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
+var borosSelect = $('<div class="container p-0 bg-dark pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
+var crablanteSelect = $('<div class="container p-0 bg-dark pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+
 var hero;
 var opponentOne;
 var opponentTwo;
@@ -7,6 +12,7 @@ var enemyOne;
 var enemyTwo;
 var enemyThree;
 var enemySelected;
+var heroChosen = false;
 
 //Character  Objects
 var saitama = {
@@ -24,7 +30,7 @@ var genos = {
 }
 
 var boros = {
-  name: "Lord Boros",
+  name: "Boros",
   healthPoints: 200,
   attackPower: 8,
   counterAttackPower: 20
@@ -39,92 +45,192 @@ var crablante = {
 
 //Pick Character
 $("#saitamaClick").click(function() {
+  if (heroChosen === false) {
+    
+    $("#saitamaClick").remove().addClass("saitama");
+    $("#genosClick").remove().addClass("genos");
+    $("#borosClick").remove().addClass("boros");
+    $("#crablanteClick").remove().addClass("crablante");
 
-  hero = $('<div class="container p-0 bg-secondary pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
-  opponentOne = $('<div class="container p-0 bg-secondary pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
-  opponentTwo = $('<div class="container p-0 bg-secondary pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
-  opponentThree = $('<div class="container p-0 bg-secondary pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+    //Hero Selected
+    $("#myHero").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+  
+    //Adds enemy1 to enemies available
+    $("#enemy1").append(genosSelect);
+      genosSelect.attr('id', 'genosClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy1").click(function() {
+        $("#genosClick").remove();
+        $("#enemy1").remove();
+        $("#defender").append(genosSelect);
+          genosSelect.attr('id', 'genosClick');
+      })
+   
+    //Adds enemy2 to enemies available
+    $("#enemy2").append(borosSelect);
+      borosSelect.attr('id', 'borosClick');
+    //Click sends enemy2 to defender slot      
+    $("#enemy2").click(function() {
+      $("#borosClick").remove();
+      $("#enemy2").remove();
+      $("#defender").append(borosSelect);
+        borosSelect.attr('id', 'borosClick');
+      })  
 
-  $("#saitamaClick").remove().addClass("saitama");
-  $("#genosClick").remove().addClass("genos");
-  $("#borosClick").remove().addClass("boros");
-  $("#crablanteClick").remove().addClass("crablante");
-
-  $("#myHero").append(hero);
-    hero.attr('id', 'saitamaClick');
-  $("#enemy1").append(opponentOne);
-    opponentOne.attr('id', 'genosClick');
-  $("#enemy2").append(opponentTwo);
-    opponentTwo.attr('id', 'borosClick');
-  $("#enemy3").append(opponentThree);
-    opponentThree.attr('id', 'crablanteClick');
+    //Adds enemy3 to enemies available
+    $("#enemy3").append(crablanteSelect);
+      crablanteSelect.attr('id', 'crablanteClick');
+    //Click sends enemy3 to defender slot      
+    $("#enemy3").click(function() {
+      $("#crablanteClick").remove();
+      $("#enemy3").remove();
+      $("#defender").append(crablanteSelect);
+        crablanteSelect.attr('id', 'crablanteClick');
+      })  
+    }
 });
 
 $("#genosClick").click(function() {
+  if (heroChosen === false) {
+    
+    $("#saitamaClick").remove().addClass("saitama");
+    $("#genosClick").remove().addClass("genos");
+    $("#borosClick").remove().addClass("boros");
+    $("#crablanteClick").remove().addClass("crablante");
 
-  opponentOne = $('<div class="container p-0 bg-secondary pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
-  hero = $('<div class="container p-0 bg-secondary pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
-  opponentTwo = $('<div class="container p-0 bg-secondary pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
-  opponentThree = $('<div class="container p-0 bg-secondary pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+    //Adds enemy1 to enemies available
+    $("#enemy1").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy1").click(function() {
+        $("#saitamaClick").remove();
+        $("#enemy1").remove();
+        $("#defender").append(saitamaSelect);
+          saitamaSelect.attr('id', 'saitamaClick');
+      })
 
-  $("#saitamaClick").remove().addClass("saitama");
-  $("#genosClick").remove().addClass("genos");
-  $("#borosClick").remove().addClass("boros");
-  $("#crablanteClick").remove().addClass("crablante");
+    //Hero Selected
+    $("#myHero").append(genosSelect);
+      genosSelect.attr('id', 'genosClick');
+   
+    //Adds enemy2 to enemies available
+    $("#enemy2").append(borosSelect);
+      borosSelect.attr('id', 'borosClick');
+    //Click sends enemy2 to defender slot      
+    $("#enemy2").click(function() {
+      $("#borosClick").remove();
+      $("#enemy2").remove();
+      $("#defender").append(borosSelect);
+        borosSelect.attr('id', 'borosClick');
+      })  
 
-  $("#enemy1").append(opponentOne);
-    opponentOne.attr('id', 'saitamaClick');
-  $("#myHero").append(hero);
-    hero.attr('id', 'genosClick');
-  $("#enemy2").append(opponentTwo);
-    opponentTwo.attr('id', 'borosClick');
-  $("#enemy3").append(opponentThree);
-    opponentThree.attr('id', 'crablanteClick');
+    //Adds enemy3 to enemies available
+    $("#enemy3").append(crablanteSelect);
+      crablanteSelect.attr('id', 'crablanteClick');
+    //Click sends enemy3 to defender slot      
+    $("#enemy3").click(function() {
+      $("#crablanteClick").remove();
+      $("#enemy3").remove();
+      $("#defender").append(crablanteSelect);
+        crablanteSelect.attr('id', 'crablanteClick');
+      })  
+  }
 });
 
 $("#borosClick").click(function() {
+  if (heroChosen === false) {
 
-  opponentOne = $('<div class="container p-0 bg-secondary pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
-  opponentTwo = $('<div class="container p-0 bg-secondary pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
-  hero = $('<div class="container p-0 bg-secondary pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
-  opponentThree = $('<div class="container p-0 bg-secondary pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+    $("#saitamaClick").remove().addClass("saitama");
+    $("#genosClick").remove().addClass("genos");
+    $("#borosClick").remove().addClass("boros");
+    $("#crablanteClick").remove().addClass("crablante");
 
-  $("#saitamaClick").remove().addClass("saitama");
-  $("#genosClick").remove().addClass("genos");
-  $("#borosClick").remove().addClass("boros");
-  $("#crablanteClick").remove().addClass("crablante");
+    //Adds enemy1 to enemies available
+    $("#enemy1").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy1").click(function() {
+        $("#saitamaClick").remove();
+        $("#enemy1").remove();
+        $("#defender").append(saitamaSelect);
+          saitamaSelect.attr('id', 'saitamaClick');
+      })
 
-  $("#enemy1").append(opponentOne);
-    opponentOne.attr('id', 'saitamaClick');
-  $("#enemy2").append(opponentTwo);
-    opponentTwo.attr('id', 'genosClick');
-  $("#myHero").append(hero);
-    hero.attr('id', 'borosClick');
-  $("#enemy3").append(opponentThree);
-    opponentThree.attr('id', 'crablanteClick');
+    //Adds enemy2 to enemies available      
+    $("#enemy2").append(genosSelect);
+      genosSelect.attr('id', 'genosClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy2").click(function() {
+      $("#genosClick").remove();
+      $("#enemy2").remove();
+      $("#defender").append(genosSelect);
+        genosSelect.attr('id', 'genosClick');
+    })
+
+    //Hero Selected
+    $("#myHero").append(borosSelect);
+      borosSelect.attr('id', 'borosClick');
+
+    //Adds enemy3 to enemies available
+    $("#enemy3").append(crablanteSelect);
+      crablanteSelect.attr('id', 'crablanteClick');
+    //Click sends enemy3 to defender slot      
+    $("#enemy3").click(function() {
+      $("#crablanteClick").remove();
+      $("#enemy3").remove();
+      $("#defender").append(crablanteSelect);
+        crablanteSelect.attr('id', 'crablanteClick');
+      })  
+  }
 });
 
 $("#crablanteClick").click(function() {
+  if (heroChosen === false) {
+    $("#saitamaClick").remove().addClass("saitama");
+    $("#genosClick").remove().addClass("genos");
+    $("#borosClick").remove().addClass("boros");
+    $("#crablanteClick").remove().addClass("crablante");
 
-  opponentOne = $('<div class="container p-0 bg-secondary pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
-  opponentTwo = $('<div class="container p-0 bg-secondary pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
-  opponentThree = $('<div class="container p-0 bg-secondary pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
-  hero = $('<div class="container p-0 bg-secondary pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+    //Adds enemy1 to enemies available
+    $("#enemy1").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy1").click(function() {
+        $("#saitamaClick").remove();
+        $("#enemy1").remove();
+        $("#defender").append(saitamaSelect);
+          saitamaSelect.attr('id', 'saitamaClick');
+      })
 
-  $("#saitamaClick").remove().addClass("saitama");
-  $("#genosClick").remove().addClass("genos");
-  $("#borosClick").remove().addClass("boros");
-  $("#crablanteClick").remove().addClass("crablante");
+    //Adds enemy2 to enemies available      
+    $("#enemy2").append(genosSelect);
+      genosSelect.attr('id', 'genosClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy2").click(function() {
+      $("#genosClick").remove();
+      $("#enemy2").remove();
+      $("#defender").append(genosSelect);
+        genosSelect.attr('id', 'genosClick');
+    })
 
-  $("#enemy1").append(opponentOne);
-    opponentOne.attr('id', 'saitamaClick');
-  $("#enemy2").append(opponentTwo);
-    opponentTwo.attr('id', 'genosClick');
-  $("#enemy3").append(opponentThree);
-    opponentThree.attr('id', 'borosClick');
-  $("#myHero").append(hero);
-    hero.attr('id', 'crablanteClick');
+    //Adds enemy3 to enemies available      
+    $("#enemy3").append(borosSelect);
+      borosSelect.attr('id', 'borosClick');
+    //Click sends enemy3 to defender slot      
+    $("#enemy3").click(function() {
+      $("#borosClick").remove();
+      $("#enemy3").remove();
+      $("#defender").append(borosSelect);
+        borosSelect.attr('id', 'borosClick');
+    })
+
+    $("#myHero").append(crablanteSelect);
+      crablanteSelect.attr('id', 'crablanteClick');
+  }
 });
+
+
 
   //When character chosen move to your character
   //Move enemy characters to enemies available to attack
