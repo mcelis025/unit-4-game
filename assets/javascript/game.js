@@ -4,14 +4,9 @@ var genosSelect = $('<div class="container p-0 bg-dark pt-4" id="genosClick"> <i
 var borosSelect = $('<div class="container p-0 bg-dark pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
 var crablanteSelect = $('<div class="container p-0 bg-dark pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
 
-var hero;
-var opponentOne;
-var opponentTwo;
-var opponentThree;
-var enemyOne;
-var enemyTwo;
-var enemyThree;
+var heroSelected;
 var enemySelected;
+
 var heroChosen = false;
 
 //Character  Objects
@@ -47,6 +42,8 @@ var crablante = {
 $("#saitamaClick").click(function() {
   if (heroChosen === false) {
     
+    heroSelected = saitamaSelect;
+
     $("#saitamaClick").remove().addClass("saitama");
     $("#genosClick").remove().addClass("genos");
     $("#borosClick").remove().addClass("boros");
@@ -65,7 +62,6 @@ $("#saitamaClick").click(function() {
         $("#enemy1").remove();
         $("#defender").append(genosSelect);
           genosSelect.attr('id', 'genosClick');
-      })
    
     //Adds enemy2 to enemies available
     $("#enemy2").append(borosSelect);
@@ -230,7 +226,16 @@ $("#crablanteClick").click(function() {
   }
 });
 
+$("#attackButton").click(function(attackEnemy) {
 
+  enemySelected.healthPoints = enemySelected.healthPoints - heroSelected.attackPower;
+  console.log(enemySelected.healthPoints);
+  
+
+  if (heroChosen === true && enemySelected === true) {
+    
+  }
+});
 
   //When character chosen move to your character
   //Move enemy characters to enemies available to attack
