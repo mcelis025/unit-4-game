@@ -1,8 +1,8 @@
 //Variables
-var saitamaSelect = $('<div class="container p-0 bg-dark pt-4" id="saitamaClick"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
-var genosSelect = $('<div class="container p-0 bg-dark pt-4" id="genosClick"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
-var borosSelect = $('<div class="container p-0 bg-dark pt-4" id="borosClick"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
-var crablanteSelect = $('<div class="container p-0 bg-dark pt-4" id="crablanteClick"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
+var saitamaSelect = $('<div class="container p-0 bg-dark pt-4" id="saitama"> <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/> <p class="text-center myText">Saitama</p> <p class="text-center myText">Health: </p> </div>');
+var genosSelect = $('<div class="container p-0 bg-dark pt-4" id="genos"> <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/> <p class="text-center myText">Genos</p> <p class="text-center myText">Health: </p> </div>');
+var borosSelect = $('<div class="container p-0 bg-dark pt-4" id="boros"> <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/> <p class="text-center myText">Boros</p> <p class="text-center myText">Health: </p> </div>');
+var crablanteSelect = $('<div class="container p-0 bg-dark pt-4" id="crablante"> <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/> <p class="text-center myText">Crablante</p> <p class="text-center myText">Health: </p> </div>');
 
 var heroSelected;
 var enemySelected;
@@ -38,10 +38,12 @@ var crablante = {
   counterAttackPower: 20
 }
 
+
+/*
 //Pick Character
-$("#saitamaClick").click(function() {
+$("#saitamaClick").click(function () {
   if (heroChosen === false) {
-    
+
     heroSelected = saitamaSelect;
 
     $("#saitamaClick").remove().addClass("saitama");
@@ -51,90 +53,44 @@ $("#saitamaClick").click(function() {
 
     //Hero Selected
     $("#myHero").append(saitamaSelect);
-      saitamaSelect.attr('id', 'saitamaClick');
-  
+    saitamaSelect.attr('id', 'saitamaClick');
+
     //Adds enemy1 to enemies available
     $("#enemy1").append(genosSelect);
-      genosSelect.attr('id', 'genosClick');
+    genosSelect.attr('id', 'genosClick');
     //Click sends enemy1 to defender slot      
-    $("#enemy1").click(function() {
-        $("#genosClick").remove();
-        $("#enemy1").remove();
-        $("#defender").append(genosSelect);
-          genosSelect.attr('id', 'genosClick');
-   
+    $("#enemy1").click(function () {
+      $("#genosClick").remove();
+      $("#enemy1").remove();
+      $("#defender").append(genosSelect);
+      genosSelect.attr('id', 'genosClick');
+    })
+
     //Adds enemy2 to enemies available
     $("#enemy2").append(borosSelect);
-      borosSelect.attr('id', 'borosClick');
+    borosSelect.attr('id', 'borosClick');
     //Click sends enemy2 to defender slot      
-    $("#enemy2").click(function() {
+    $("#enemy2").click(function () {
       $("#borosClick").remove();
       $("#enemy2").remove();
       $("#defender").append(borosSelect);
-        borosSelect.attr('id', 'borosClick');
-      })  
-
-    //Adds enemy3 to enemies available
-    $("#enemy3").append(crablanteSelect);
-      crablanteSelect.attr('id', 'crablanteClick');
-    //Click sends enemy3 to defender slot      
-    $("#enemy3").click(function() {
-      $("#crablanteClick").remove();
-      $("#enemy3").remove();
-      $("#defender").append(crablanteSelect);
-        crablanteSelect.attr('id', 'crablanteClick');
-      })  
-    }
-});
-
-$("#genosClick").click(function() {
-  if (heroChosen === false) {
-    
-    $("#saitamaClick").remove().addClass("saitama");
-    $("#genosClick").remove().addClass("genos");
-    $("#borosClick").remove().addClass("boros");
-    $("#crablanteClick").remove().addClass("crablante");
-
-    //Adds enemy1 to enemies available
-    $("#enemy1").append(saitamaSelect);
-      saitamaSelect.attr('id', 'saitamaClick');
-    //Click sends enemy1 to defender slot      
-    $("#enemy1").click(function() {
-        $("#saitamaClick").remove();
-        $("#enemy1").remove();
-        $("#defender").append(saitamaSelect);
-          saitamaSelect.attr('id', 'saitamaClick');
-      })
-
-    //Hero Selected
-    $("#myHero").append(genosSelect);
-      genosSelect.attr('id', 'genosClick');
-   
-    //Adds enemy2 to enemies available
-    $("#enemy2").append(borosSelect);
       borosSelect.attr('id', 'borosClick');
-    //Click sends enemy2 to defender slot      
-    $("#enemy2").click(function() {
-      $("#borosClick").remove();
-      $("#enemy2").remove();
-      $("#defender").append(borosSelect);
-        borosSelect.attr('id', 'borosClick');
-      })  
+    })
 
     //Adds enemy3 to enemies available
     $("#enemy3").append(crablanteSelect);
-      crablanteSelect.attr('id', 'crablanteClick');
+    crablanteSelect.attr('id', 'crablanteClick');
     //Click sends enemy3 to defender slot      
-    $("#enemy3").click(function() {
+    $("#enemy3").click(function () {
       $("#crablanteClick").remove();
       $("#enemy3").remove();
       $("#defender").append(crablanteSelect);
-        crablanteSelect.attr('id', 'crablanteClick');
-      })  
+      crablanteSelect.attr('id', 'crablanteClick');
+    })
   }
 });
 
-$("#borosClick").click(function() {
+$("#genosClick").click(function () {
   if (heroChosen === false) {
 
     $("#saitamaClick").remove().addClass("saitama");
@@ -144,44 +100,91 @@ $("#borosClick").click(function() {
 
     //Adds enemy1 to enemies available
     $("#enemy1").append(saitamaSelect);
-      saitamaSelect.attr('id', 'saitamaClick');
+    saitamaSelect.attr('id', 'saitamaClick');
     //Click sends enemy1 to defender slot      
-    $("#enemy1").click(function() {
-        $("#saitamaClick").remove();
-        $("#enemy1").remove();
-        $("#defender").append(saitamaSelect);
-          saitamaSelect.attr('id', 'saitamaClick');
-      })
+    $("#enemy1").click(function () {
+      $("#saitamaClick").remove();
+      $("#enemy1").remove();
+      $("#defender").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+    })
+
+    //Hero Selected
+    $("#myHero").append(genosSelect);
+    genosSelect.attr('id', 'genosClick');
+
+    //Adds enemy2 to enemies available
+    $("#enemy2").append(borosSelect);
+    borosSelect.attr('id', 'borosClick');
+    //Click sends enemy2 to defender slot      
+    $("#enemy2").click(function () {
+      $("#borosClick").remove();
+      $("#enemy2").remove();
+      $("#defender").append(borosSelect);
+      borosSelect.attr('id', 'borosClick');
+    })
+
+    //Adds enemy3 to enemies available
+    $("#enemy3").append(crablanteSelect);
+    crablanteSelect.attr('id', 'crablanteClick');
+    //Click sends enemy3 to defender slot      
+    $("#enemy3").click(function () {
+      $("#crablanteClick").remove();
+      $("#enemy3").remove();
+      $("#defender").append(crablanteSelect);
+      crablanteSelect.attr('id', 'crablanteClick');
+    })
+  }
+});
+
+$("#borosClick").click(function () {
+  if (heroChosen === false) {
+
+    $("#saitamaClick").remove().addClass("saitama");
+    $("#genosClick").remove().addClass("genos");
+    $("#borosClick").remove().addClass("boros");
+    $("#crablanteClick").remove().addClass("crablante");
+
+    //Adds enemy1 to enemies available
+    $("#enemy1").append(saitamaSelect);
+    saitamaSelect.attr('id', 'saitamaClick');
+    //Click sends enemy1 to defender slot      
+    $("#enemy1").click(function () {
+      $("#saitamaClick").remove();
+      $("#enemy1").remove();
+      $("#defender").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+    })
 
     //Adds enemy2 to enemies available      
     $("#enemy2").append(genosSelect);
-      genosSelect.attr('id', 'genosClick');
+    genosSelect.attr('id', 'genosClick');
     //Click sends enemy1 to defender slot      
-    $("#enemy2").click(function() {
+    $("#enemy2").click(function () {
       $("#genosClick").remove();
       $("#enemy2").remove();
       $("#defender").append(genosSelect);
-        genosSelect.attr('id', 'genosClick');
+      genosSelect.attr('id', 'genosClick');
     })
 
     //Hero Selected
     $("#myHero").append(borosSelect);
-      borosSelect.attr('id', 'borosClick');
+    borosSelect.attr('id', 'borosClick');
 
     //Adds enemy3 to enemies available
     $("#enemy3").append(crablanteSelect);
-      crablanteSelect.attr('id', 'crablanteClick');
+    crablanteSelect.attr('id', 'crablanteClick');
     //Click sends enemy3 to defender slot      
-    $("#enemy3").click(function() {
+    $("#enemy3").click(function () {
       $("#crablanteClick").remove();
       $("#enemy3").remove();
       $("#defender").append(crablanteSelect);
-        crablanteSelect.attr('id', 'crablanteClick');
-      })  
+      crablanteSelect.attr('id', 'crablanteClick');
+    })
   }
 });
 
-$("#crablanteClick").click(function() {
+$("#crablanteClick").click(function () {
   if (heroChosen === false) {
     $("#saitamaClick").remove().addClass("saitama");
     $("#genosClick").remove().addClass("genos");
@@ -190,50 +193,50 @@ $("#crablanteClick").click(function() {
 
     //Adds enemy1 to enemies available
     $("#enemy1").append(saitamaSelect);
-      saitamaSelect.attr('id', 'saitamaClick');
+    saitamaSelect.attr('id', 'saitamaClick');
     //Click sends enemy1 to defender slot      
-    $("#enemy1").click(function() {
-        $("#saitamaClick").remove();
-        $("#enemy1").remove();
-        $("#defender").append(saitamaSelect);
-          saitamaSelect.attr('id', 'saitamaClick');
-      })
+    $("#enemy1").click(function () {
+      $("#saitamaClick").remove();
+      $("#enemy1").remove();
+      $("#defender").append(saitamaSelect);
+      saitamaSelect.attr('id', 'saitamaClick');
+    })
 
     //Adds enemy2 to enemies available      
     $("#enemy2").append(genosSelect);
-      genosSelect.attr('id', 'genosClick');
+    genosSelect.attr('id', 'genosClick');
     //Click sends enemy1 to defender slot      
-    $("#enemy2").click(function() {
+    $("#enemy2").click(function () {
       $("#genosClick").remove();
       $("#enemy2").remove();
       $("#defender").append(genosSelect);
-        genosSelect.attr('id', 'genosClick');
+      genosSelect.attr('id', 'genosClick');
     })
 
     //Adds enemy3 to enemies available      
     $("#enemy3").append(borosSelect);
-      borosSelect.attr('id', 'borosClick');
+    borosSelect.attr('id', 'borosClick');
     //Click sends enemy3 to defender slot      
-    $("#enemy3").click(function() {
+    $("#enemy3").click(function () {
       $("#borosClick").remove();
       $("#enemy3").remove();
       $("#defender").append(borosSelect);
-        borosSelect.attr('id', 'borosClick');
+      borosSelect.attr('id', 'borosClick');
     })
 
     $("#myHero").append(crablanteSelect);
-      crablanteSelect.attr('id', 'crablanteClick');
+    crablanteSelect.attr('id', 'crablanteClick');
   }
 });
 
-$("#attackButton").click(function(attackEnemy) {
+$("#attackButton").click(function (attackEnemy) {
 
   enemySelected.healthPoints = enemySelected.healthPoints - heroSelected.attackPower;
   console.log(enemySelected.healthPoints);
-  
+
 
   if (heroChosen === true && enemySelected === true) {
-    
+
   }
 });
 
@@ -245,7 +248,7 @@ $("#attackButton").click(function(attackEnemy) {
   //Move chosen character to Defender slot
 
 //When Attack Btn is clicked
-  
+
   //Show how much damage done to enemy
   //Show how much damage taken
   //Update health for both characters
