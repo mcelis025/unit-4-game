@@ -94,3 +94,28 @@ $(document).ready(function () {
 
       $("#enemyPicked").html("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='assets/images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
       $("#myHero").html("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + myHero + "'> <img src='assets/images/" + myHero.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myHero.name + "<br> Health: " + myHero.healthPoints + "</p> </div>");
+
+      //if enemy hp is at or below 0 clear the defender area
+      if (myEnemy.healthPoints <= 0) {
+        $("#enemyPicked").removeClass("defender").empty();
+        wins++;
+        enemyChosen = false;
+        if (wins === 3) {
+          $("#winLose").html("<p>YOU WIN!</p>");
+          endGame = true
+          restart = true;
+          resetBtn = false;
+          restartFunc();
+        }
+      }
+      //if my hp is at or below 0 i lose
+      if (myHero.healthPoints <= 0) {
+        $("#myHero").empty();
+        $("#winLose").html("<p>GAMEOVER. YOU LOSE</p>");
+        endGame = true
+        restart = true;
+        resetBtn = false;
+        restartFunc();
+      }
+    }
+  });
