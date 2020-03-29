@@ -11,20 +11,13 @@ img {
     font-size: 80px;
 }
 
-.saitamaImg {
-    width: 185px;
+.start {
+    width: 90%;
+    margin: 0 auto;
 }
 
-.genosImg {
-    width: 185px;
-}
-
-.borosImg {
-    width: 185px;
-}
-
-.crabImg {
-    width: 185px;
+.charImages {
+    width: 95%;
 }
 
 .textChar {
@@ -35,7 +28,11 @@ img {
 }
 
 .myText {
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Anton', sans-serif;
     font-weight: bold;
     font-size: 25px;
+}
+
+.myMessage {
+    background: white;
 }

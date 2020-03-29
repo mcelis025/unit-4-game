@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <title>RPG Game</title>
 </head>
@@ -18,73 +20,62 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="container p-0 bg-dark pt-4" id="saitamaClick">
-            <img src="assets/images/saitama.jpg" alt="saitama" class="mx-auto d-block saitamaImg"/>
-            <p class="text-center textChar">Saitama</p>
-            <p class="text-center textChar">Health: </p>
-          </div>
-        </div>    
-        <div class="col-md-3">    
-          <div class="container p-0 bg-dark pt-4" id="genosClick">
-            <img src="assets/images/genos.jpg" alt="genos" class="mx-auto d-block genosImg"/>
-            <p class="text-center textChar">Genos</p>
-            <p class="text-center textChar">Health: </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="container p-0 bg-dark pt-4" id="borosClick">
-            <img src="assets/images/boros.jpg" alt="boros" class="mx-auto d-block borosImg"/>
-            <p class="text-center textChar">Boros</p>
-            <p class="text-center textChar">Health: </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="container p-0 bg-dark pt-4" id="crablanteClick">
-            <img src="assets/images/crablante.jpg" alt="crablante" class="mx-auto d-block crabImg"/>
-            <p class="text-center textChar">Crablante</p>
-            <p class="text-center textChar">Health: </p>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid">    
+      <div class="row" id="characterChoices"></div>
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 pb-2 pt-4">
             <p class="text-center myText">Your Character</p>
-            <div class="row">
-              <div class="col-md-3 d-block mx-auto bg-warning textChar" id="myHero"></div>
-          </div>
+            <div class="row justify-content-center">
+              <div class="col-md-3 bg-warning" id="myHero"></div>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 pb-2">
             <p class="text-center myText">Enemies Available To Attack</p>
-            <div class="row">
-              <div class="col-md-3 d-block mx-auto bg-danger textChar enemyAvailable" id="enemy1"></div>
-              <div class="col-md-3 d-block mx-auto bg-danger textChar enemyAvailable" id="enemy2"></div>
-              <div class="col-md-3 d-block mx-auto bg-danger textChar enemyAvailable" id="enemy3"></div>
+            <div class="row" id="enemyAvailable">
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 pb-2">
             <p class="text-center myText">Fight Section</p>
-            <button type="button" class="btn btn-dark mx-auto d-block mb-2 mt-3 text-warning btn-outline-danger attackButton">Attack</button>
+            <button type="button"
+              class="btn btn-dark mx-auto d-block mb-2 mt-3 text-warning btn-outline-danger attackButton">
+              Attack
+            </button>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 pb-2">
             <p class="text-center myText">Defender</p>
-            <div class="row">
-                <div class="col-md-3 d-block mx-auto bg-danger textChar" id="defender"></div>
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <div class="text-center myText text-danger myMessage" id="hitText"></div>
               </div>
+              <div class="col-md-3">
+                <div class="text-center myText text-danger myMessage" id="winLose"></div>
+              </div>
+              <div class="col-md-4">
+                <div class="text-center myText text-danger myMessage" id="damageText"></div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-3 bg-danger mt-3" id="enemyPicked"></div>
+            </div>
           </div>
         </div>
-      </div>    
+        <div class="row">
+          <div class="col-md-12">
+            <div id="restartBtn"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>
