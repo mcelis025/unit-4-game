@@ -119,3 +119,64 @@ $(document).ready(function () {
       }
     }
   });
+
+  function restartFunc() {
+    if (restart === true && resetBtn === false) {
+      var btn = $("<button>");
+      btn.addClass("btn btn-dark mx-auto d-block mb-2 mt-3 text-warning btn-outline-danger restartB");
+      btn.text("Restart");
+      $("#restartBtn").append(btn);
+
+      $(btn).click(function () {
+        myHero = {};
+        myEnemy = {};
+        heroSelected = "";
+        enemySelected = "";
+        enemyChosen = false;
+        wins = 0;
+        restart = false;
+        resetBtn = true;
+        endGame = false;
+
+        $("#myHero").empty();
+        $("#enemyAvailable").empty();
+        $("#defender").empty();
+        $("#enemyPicked").empty();
+        $(".myMessage").empty();
+        $("#restartBtn").empty();
+
+      characters = [
+          {
+            name: "Saitama",
+            healthPoints: 500,
+            attackPower: 50,
+            counterAttackPower: 20
+          },
+
+          {
+            name: "Genos",
+            healthPoints: 150,
+            attackPower: 5,
+            counterAttackPower: 20
+          },
+
+          {
+            name: "Boros",
+            healthPoints: 200,
+            attackPower: 8,
+            counterAttackPower: 20
+          },
+
+          {
+            name: "Crablante",
+            healthPoints: 50,
+            attackPower: 2,
+            counterAttackPower: 20
+          }];
+          
+        initiateGame()
+
+      });
+    }
+  };
+});
