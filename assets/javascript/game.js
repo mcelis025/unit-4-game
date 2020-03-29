@@ -40,26 +40,43 @@ $(document).ready(function () {
       counterAttackPower: 20
     }];
 
-    initiateGame()
+  initiateGame()
 
-    function initiateGame() {
-  
-      for (var i = 0; i < characters.length; i++) {
-        $("#characterChoices").append("<div class='col-3'> <div class='p-0 bg-dark pt-4 start' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div></div>");
+  function initiateGame() {
+
+    for (var i = 0; i < characters.length; i++) {
+      $("#characterChoices").append("<div class='col-3'> <div class='p-0 bg-dark pt-4 start' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div></div>");
+    }
+  };
+
+  $(document).on("click", ".start", function () {
+    heroSelected = $(this).attr("data-id");
+    myHero = characters[heroSelected];
+    console.log($(this).attr("data-id"));
+    for (var i = 0; i < characters.length; i++) {
+      if (i != heroSelected) {
+        $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+      } else {
+        $("#myHero").append("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
       }
-    };
-  
-    $(document).on("click", ".start", function () {
-      heroSelected = $(this).attr("data-id");
-      myHero = characters[heroSelected];
-      console.log($(this).attr("data-id"));
+    }
+    $("#characterChoices").empty();
+  });
+
+  $(document).on("click", ".enemies", function () {
+    if (!enemyChosen) {
+      enemyChosen = true;
+      enemySelected = $(this).attr("data-id");
+      myEnemy = characters[enemySelected];
+      console.log(myEnemy);
+
+      $("#enemyPicked").append("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='assets/images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' id='" + i + "'>" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
+      $("#enemyAvailable").empty();
+
       for (var i = 0; i < characters.length; i++) {
-        if (i != heroSelected) {
-          $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
-        } else {
-          $("#myHero").append("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+        if (i != enemySelected && i != heroSelected && characters[i].healthPoints > 0) {
+          $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
         }
       }
-      $("#characterChoices").empty();
-    });
-  
+    }
+  });
