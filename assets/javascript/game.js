@@ -88,3 +88,9 @@ $(document).ready(function () {
       myHero.attackPower = myHero.attackPower * 2;
       //then he instantly counteres and reduces my hp with his counter attack power
       myHero.healthPoints = myHero.healthPoints - myEnemy.counterAttackPower;
+
+      $("#hitText").text("You hit " + myEnemy.name + " with " + myHero.attackPower + " attack power");
+      $("#damageText").text("You got hit with " + myEnemy.counterAttackPower + " attack power");
+
+      $("#enemyPicked").html("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='assets/images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
+      $("#myHero").html("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + myHero + "'> <img src='assets/images/" + myHero.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myHero.name + "<br> Health: " + myHero.healthPoints + "</p> </div>");
