@@ -80,3 +80,11 @@ $(document).ready(function () {
       }
     }
   });
+
+  $(".attackButton").click(function () {
+    if (enemyChosen === true && endGame === false) {
+      //attack the defender and reduce his hp by mychar attack power
+      myEnemy.healthPoints = myEnemy.healthPoints - myHero.attackPower;
+      myHero.attackPower = myHero.attackPower * 2;
+      //then he instantly counteres and reduces my hp with his counter attack power
+      myHero.healthPoints = myHero.healthPoints - myEnemy.counterAttackPower;
