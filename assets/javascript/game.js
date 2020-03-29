@@ -39,3 +39,13 @@ $(document).ready(function () {
       attackPower: 2,
       counterAttackPower: 20
     }];
+
+    initiateGame()
+
+    function initiateGame() {
+  
+      for (var i = 0; i < characters.length; i++) {
+        $("#characterChoices").append("<div class='col-3'> <div class='p-0 bg-dark pt-4 start' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div></div>");
+      }
+    };
+  
