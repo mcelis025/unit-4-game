@@ -145,7 +145,7 @@ $(document).ready(function () {
         $(".myMessage").empty();
         $("#restartBtn").empty();
 
-      characters = [
+        characters = [
           {
             name: "Saitama",
             healthPoints: 500,
@@ -173,7 +173,7 @@ $(document).ready(function () {
             attackPower: 2,
             counterAttackPower: 20
           }];
-          
+
         initiateGame()
 
       });
