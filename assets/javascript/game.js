@@ -49,3 +49,17 @@ $(document).ready(function () {
       }
     };
   
+    $(document).on("click", ".start", function () {
+      heroSelected = $(this).attr("data-id");
+      myHero = characters[heroSelected];
+      console.log($(this).attr("data-id"));
+      for (var i = 0; i < characters.length; i++) {
+        if (i != heroSelected) {
+          $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+        } else {
+          $("#myHero").append("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+        }
+      }
+      $("#characterChoices").empty();
+    });
+  
