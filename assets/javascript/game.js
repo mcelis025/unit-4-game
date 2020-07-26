@@ -45,7 +45,7 @@ $(document).ready(function () {
   function initiateGame() {
 
     for (var i = 0; i < characters.length; i++) {
-      $("#characterChoices").append("<div class='col-3'> <div class='p-0 bg-dark pt-4 start' data-id='" + i + "'> <img src='../images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div></div>");
+      $("#characterChoices").append("<div class='col-3'> <div class='p-0 bg-dark pt-4 start' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div></div>");
     }
   };
 
@@ -55,9 +55,9 @@ $(document).ready(function () {
     console.log($(this).attr("data-id"));
     for (var i = 0; i < characters.length; i++) {
       if (i != heroSelected) {
-        $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='../images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+        $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
       } else {
-        $("#myHero").append("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + i + "'> <img src='../images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+        $("#myHero").append("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
       }
     }
     $("#characterChoices").empty();
@@ -70,12 +70,12 @@ $(document).ready(function () {
       myEnemy = characters[enemySelected];
       console.log(myEnemy);
 
-      $("#enemyPicked").append("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='../images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' id='" + i + "'>" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
+      $("#enemyPicked").append("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='assets/images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' id='" + i + "'>" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
       $("#enemyAvailable").empty();
 
       for (var i = 0; i < characters.length; i++) {
         if (i != enemySelected && i != heroSelected && characters[i].healthPoints > 0) {
-          $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='../images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
+          $("#enemyAvailable").append("<div class='col-3 pt-4 p-0 d-block mx-auto bg-dark textChar enemies' data-id='" + i + "'> <img src='assets/images/" + characters[i].name + ".jpg' class=' mx-auto d-block charImages'/> <p class='text-center textChar'>" + characters[i].name + "<br> Health: " + characters[i].healthPoints + "</p> </div>");
         }
       }
     }
@@ -92,8 +92,8 @@ $(document).ready(function () {
       $("#hitText").text("You hit " + myEnemy.name + " with " + myHero.attackPower + " attack power");
       $("#damageText").text("You got hit with " + myEnemy.counterAttackPower + " attack power");
 
-      $("#enemyPicked").html("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='../images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
-      $("#myHero").html("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + myHero + "'> <img src='../images/" + myHero.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myHero.name + "<br> Health: " + myHero.healthPoints + "</p> </div>");
+      $("#enemyPicked").html("<div class='container d-block mx-auto bg-dark textChar defender' data-id='" + myEnemy + "'> <img src='assets/images/" + myEnemy.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myEnemy.name + "<br> Health: " + myEnemy.healthPoints + "</p> </div>");
+      $("#myHero").html("<div class='container d-block mx-auto bg-dark textChar hero' data-id='" + myHero + "'> <img src='assets/images/" + myHero.name + ".jpg' class='pt-3 mx-auto d-block charImages'/> <p class='text-center textChar' >" + myHero.name + "<br> Health: " + myHero.healthPoints + "</p> </div>");
 
       //if enemy hp is at or below 0 clear the defender area
       if (myEnemy.healthPoints <= 0) {
